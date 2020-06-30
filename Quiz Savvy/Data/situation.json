@@ -1,0 +1,47 @@
+[
+    {
+        "id":"1",
+        "type": "日常",
+        "imageName": "situation1",
+        "quiz":[
+            {
+                "id":"001",
+                "title":"ljlajg",
+                "explain": "awggj",
+                "OKans": "nglegn",
+                "BADans": "kngln",
+                "favorite": false
+            }
+        ]
+    },
+    {
+        "id":"2",
+        "type": "学校",
+        "imageName": "situation2",
+        "quiz":[
+            {
+                "id":"001",
+                "title":"ljlajg",
+                "explain": "awggj",
+                "OKans": "nglegn",
+                "BADans": "kngln",
+                "favorite": false
+            }
+        ]
+    },
+    {
+        "id":"3",
+        "type": "旅行",
+        "imageName": "situation1",
+        "quiz":[
+            {
+                "id":"001",
+                "title":"ljlajg",
+                "explain": "awggj",
+                "OKans": "nglegn",
+                "BADans": "kngln",
+                "favorite": false
+            }
+        ]
+    }
+]
