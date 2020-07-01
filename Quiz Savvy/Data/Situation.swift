@@ -22,5 +22,7 @@ struct Quiz : Hashable,Codable,Identifiable {
     public var explain: String
     public var OKans: String
     public var BADans: String
+    public var favorite: Bool
+    public var ghkfjakf: Bool
 }
 
