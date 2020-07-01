@@ -12,7 +12,7 @@ struct StartView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 300.0){
-                Text("覚醒青梗菜")
+                Text("覚醒青梗菜7")
                     .font(.largeTitle)
                     .fontWeight(.thin)
                     .padding()
