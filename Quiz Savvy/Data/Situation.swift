@@ -23,6 +23,6 @@ struct Quiz : Hashable,Codable,Identifiable {
     public var OKans: String
     public var BADans: String
     public var favorite: Bool
-    public var SGDsgsag: Bool
+    public var SGDsgsag: String
 }
 
