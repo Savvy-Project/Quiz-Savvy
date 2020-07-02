@@ -18,6 +18,7 @@ struct ChooseView: View {
                     ZStack{
                         NavigationLink(destination: DetailView()) {
                             item.image
+                                .renderingMode(.original)
                                 .resizable()
                                 .frame(width: 155, height: 155)
                             
