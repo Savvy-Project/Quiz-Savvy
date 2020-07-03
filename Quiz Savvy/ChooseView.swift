@@ -20,7 +20,7 @@ struct ChooseView: View {
                             item.image
                                 .renderingMode(.original)
                                 .resizable()
-                                .frame(width: 300, height: 200)
+                                .frame(width: 280, height: 180)
                             .cornerRadius(10)
                             
                         }
