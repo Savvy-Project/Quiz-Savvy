@@ -18,17 +18,23 @@ struct ChooseView: View {
                     ZStack{
                         NavigationLink(destination: DetailView()) {
                             item.image
+                                .renderingMode(.original)
                                 .resizable()
-                                .frame(width: 155, height: 155)
+                                .frame(width: 300, height: 200)
+                            .cornerRadius(10)
                             
                         }
                         Text(item.type)
-                            .font(.largeTitle)
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.white)
+
                     }
                 }
             }
-            .navigationBarTitle("buriburi")
+            .navigationBarTitle("Situation")
         }
+        .padding(.top,-45)
     }
 }
 
