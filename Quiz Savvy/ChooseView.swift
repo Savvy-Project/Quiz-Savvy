@@ -21,7 +21,7 @@ struct ChooseView: View {
                                 .renderingMode(.original)
                                 .resizable()
                                 .frame(width: 280, height: 180)
-                            .cornerRadius(20)
+                            .cornerRadius(15)
                             
                         }
                         Text(item.type)
