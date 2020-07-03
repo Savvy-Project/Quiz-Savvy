@@ -19,13 +19,13 @@ struct QuizRowView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20,style: .continuous)
                         .fill(Color.red)
-                        .frame(width: 200, height: 100)
+                        .frame(width: 200, height: 200)
                     Text(q.quiz.OKans)
                 }
                 ZStack {
                     RoundedRectangle(cornerRadius: 20,style: .continuous)
                         .fill(Color.blue)
-                        .frame(width: 200, height: 100)
+                        .frame(width: 200, height: 200)
                     Text(q.quiz.BADans)
                 }
             }

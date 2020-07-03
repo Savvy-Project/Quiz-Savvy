@@ -10,7 +10,7 @@ import SwiftUI
 
 struct QuizDetailView: View {
     var body: some View {
-        Text("ちんちんおんぱんぱん")
+        Text("ちんちんおんぱん")
     }
 }
 
