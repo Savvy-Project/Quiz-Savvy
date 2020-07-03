@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct ChooseView: View {
-    var items: [Situation]
+    @State var items: [Situation]
     
     var body: some View {
         NavigationView {
             VStack {
                 ForEach(self.items) { item in
                     ZStack{
-                        NavigationLink(destination: DetailView()) {
+                        NavigationLink(destination: QuizDetailView()) {
                             item.image
                                 .renderingMode(.original)
                                 .resizable()

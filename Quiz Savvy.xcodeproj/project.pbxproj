@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC3A8C3F24AF019500E05E70 /* QuizRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3A8C3E24AF019500E05E70 /* QuizRowView.swift */; };
 		CC47627224AB2AEA008CBFAE /* situation.json in Resources */ = {isa = PBXBuildFile; fileRef = CC47627124AB2AEA008CBFAE /* situation.json */; };
 		CCDFDC8724A8568700A09046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDC8624A8568700A09046 /* AppDelegate.swift */; };
 		CCDFDC8924A8568700A09046 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDC8824A8568700A09046 /* SceneDelegate.swift */; };
@@ -19,7 +20,7 @@
 		CCDFDCB924A8579500A09046 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCB824A8579500A09046 /* HomeView.swift */; };
 		CCDFDCBB24A857A800A09046 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCBA24A857A800A09046 /* TopView.swift */; };
 		CCDFDCBD24A8580000A09046 /* ChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCBC24A8580000A09046 /* ChooseView.swift */; };
-		CCDFDCBF24A8581100A09046 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCBE24A8581100A09046 /* DetailView.swift */; };
+		CCDFDCBF24A8581100A09046 /* QuizDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCBE24A8581100A09046 /* QuizDetailView.swift */; };
 		CCDFDCC124A870C400A09046 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCC024A870C400A09046 /* FavoriteView.swift */; };
 		CCDFDCC824AA07AF00A09046 /* Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCC724AA07AF00A09046 /* Situation.swift */; };
 		CCDFDCCA24AA080600A09046 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCC924AA080600A09046 /* Data.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC3A8C3E24AF019500E05E70 /* QuizRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRowView.swift; sourceTree = "<group>"; };
 		CC47627124AB2AEA008CBFAE /* situation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = situation.json; sourceTree = "<group>"; };
 		CCDFDC8324A8568600A09046 /* Quiz Savvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz Savvy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDFDC8624A8568700A09046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		CCDFDCB824A8579500A09046 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CCDFDCBA24A857A800A09046 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		CCDFDCBC24A8580000A09046 /* ChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseView.swift; sourceTree = "<group>"; };
-		CCDFDCBE24A8581100A09046 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CCDFDCBE24A8581100A09046 /* QuizDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDetailView.swift; sourceTree = "<group>"; };
 		CCDFDCC024A870C400A09046 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		CCDFDCC724AA07AF00A09046 /* Situation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Situation.swift; sourceTree = "<group>"; };
 		CCDFDCC924AA080600A09046 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -123,7 +125,8 @@
 				CCDFDCC024A870C400A09046 /* FavoriteView.swift */,
 				CCDFDCBA24A857A800A09046 /* TopView.swift */,
 				CCDFDCBC24A8580000A09046 /* ChooseView.swift */,
-				CCDFDCBE24A8581100A09046 /* DetailView.swift */,
+				CCDFDCBE24A8581100A09046 /* QuizDetailView.swift */,
+				CC3A8C3E24AF019500E05E70 /* QuizRowView.swift */,
 				CCDFDC8C24A8568900A09046 /* Assets.xcassets */,
 				CCDFDC9124A8568900A09046 /* LaunchScreen.storyboard */,
 				CCDFDC9424A8568900A09046 /* Info.plist */,
@@ -303,10 +306,11 @@
 				CCDFDCC124A870C400A09046 /* FavoriteView.swift in Sources */,
 				CCDFDCCA24AA080600A09046 /* Data.swift in Sources */,
 				CCDFDC8724A8568700A09046 /* AppDelegate.swift in Sources */,
-				CCDFDCBF24A8581100A09046 /* DetailView.swift in Sources */,
+				CCDFDCBF24A8581100A09046 /* QuizDetailView.swift in Sources */,
 				CCDFDC8924A8568700A09046 /* SceneDelegate.swift in Sources */,
 				CCDFDCBD24A8580000A09046 /* ChooseView.swift in Sources */,
 				CCDFDCB924A8579500A09046 /* HomeView.swift in Sources */,
+				CC3A8C3F24AF019500E05E70 /* QuizRowView.swift in Sources */,
 				CCDFDCBB24A857A800A09046 /* TopView.swift in Sources */,
 				CCDFDCB724A8576600A09046 /* StartView.swift in Sources */,
 				CCDFDCC824AA07AF00A09046 /* Situation.swift in Sources */,

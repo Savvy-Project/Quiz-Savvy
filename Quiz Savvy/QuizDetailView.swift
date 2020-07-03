@@ -8,15 +8,14 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct QuizDetailView: View {
     var body: some View {
-        Text("ぶるりぶえいり")
-        
+        Text("ちんちんおんぱんぱん")
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        QuizDetailView()
     }
 }
