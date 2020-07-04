@@ -9,8 +9,12 @@
 import SwiftUI
 
 struct QuizDetailView: View {
+
+    var num: String = ""
+    
     var body: some View {
-        Text("ちんちんおんぱ")
+        Text(num)
+        
     }
 }
 

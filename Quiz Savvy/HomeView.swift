@@ -21,7 +21,7 @@ struct HomeView: View {
                     }
                 }.tag(0)
            
-            ChooseView(items: quizStore.quizs)
+            ChooseView(items: situationStore)
                 .tabItem {
                     VStack {
                         Image(systemName: "person.fill")

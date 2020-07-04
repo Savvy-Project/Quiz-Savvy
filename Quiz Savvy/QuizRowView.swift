@@ -9,24 +9,44 @@
 import SwiftUI
 
 struct QuizRowView: View {
-    var q: Situation
+    @State var showingDetail = false
+    var q: Quiz
+    @State var list: [String] = []
+    @State var showText = false
+    
+    
     var body: some View {
         NavigationView {
             VStack {
-                Text(q.quiz.title)
-                Text(q.quiz.explain)
+                Text(q.title)
+                Text(q.explain)
                 Spacer()
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20,style: .continuous)
-                        .fill(Color.red)
-                        .frame(width: 200, height: 200)
-                    Text(q.quiz.OKans)
+                Button(action: {
+                    self.list = []
+                    self.list.append(self.q.OKans)
+                    self.list.append(self.q.BADans)
+                    self.list.shuffle()
+                    self.showText.toggle()
+                }) {
+                    Text("result")
                 }
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20,style: .continuous)
-                        .fill(Color.blue)
-                        .frame(width: 200, height: 200)
-                    Text(q.quiz.BADans)
+                if showText {
+                    ForEach(0..<list.count)  { n in
+                        Button(action: {self.showingDetail.toggle() }) {
+                            Text(self.list[n])
+                        }
+                    }
+                    
+                        Button(action: {self.showingDetail.toggle() }) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20,style: .continuous)
+                                    .fill(Color.yellow)
+                                    .frame(width: 200, height: 200)
+                                Text(q.BADans)
+                            }
+                        }.sheet(isPresented: $showingDetail) {
+                            Text("bubu")
+                        }
                 }
             }
         }
@@ -36,6 +56,6 @@ struct QuizRowView: View {
 
 struct QuizRowView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizRowView(q: quizStore.quizs[0])
+        QuizRowView(q: quizStore.quiz1[0])
     }
 }

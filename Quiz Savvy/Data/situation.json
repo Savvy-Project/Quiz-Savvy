@@ -1,41 +1,14 @@
 [
     {
-        "id":"1",
+        "id":"001",
         "type": "日常",
         "imageName": "situation1",
-        "quiz":{
-                "id":"001",
-                "title":"ljlajg",
-                "explain": "awggj",
-                "OKans": "nglegnkgkgb",
-                "BADans": "kngln",
-                "favorite": false
-        }
+        "quiz": "1"
     },
     {
-        "id":"2",
+        "id":"002",
         "type": "学校",
         "imageName": "situation2",
-        "quiz":{
-                "id":"001",
-                "title":"ljlajg",
-                "explain": "awggj",
-                "OKans": "nglegn",
-                "BADans": "kngln",
-                "favorite": false
-        }
-    },
-    {
-        "id":"3",
-        "type": "旅行",
-        "imageName": "situation1",
-        "quiz":{
-                "id":"001",
-                "title":"ljlajg",
-                "explain": "awggj",
-                "OKans": "nglegn",
-                "BADans": "kngln",
-                "favorite": false
-        }
+        "quiz": "2"
     }
 ]

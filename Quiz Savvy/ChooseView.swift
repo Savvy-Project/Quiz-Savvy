@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct ChooseView: View {
-    @State var items: [Situation]
+    var items: [Situation]
     
     var body: some View {
         NavigationView {
             VStack {
                 ForEach(self.items) { item in
-                    ZStack{
-                        NavigationLink(destination: QuizDetailView()) {
+                   ZStack{
+                    NavigationLink(destination: QuizDetailView(num: item.quiz)) {
                             item.image
                                 .renderingMode(.original)
                                 .resizable()
@@ -41,6 +41,6 @@ struct ChooseView: View {
 
 struct ChooseView_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseView(items: quizStore.quizs)
+        ChooseView(items: situationStore)
     }
 }

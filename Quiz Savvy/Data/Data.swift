@@ -9,10 +9,14 @@
 import Foundation
 
 struct QuizStore {
-    let quizs: [Situation] = load("situation.json")
+    let quiz1: [Quiz] = load("quiz1.json")
+    let quiz2: [Quiz] = load("quiz2.json")
 }
 
+let situationStore: [Situation] = load("situation.json")
 let quizStore = QuizStore()
+
+
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data
