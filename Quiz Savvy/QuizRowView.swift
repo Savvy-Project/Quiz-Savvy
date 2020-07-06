@@ -9,7 +9,10 @@
 import SwiftUI
 
 struct QuizRowView: View {
-    @State var showingDetail = false
+    @State var showingDetail1 = false
+    @State var showingDetail2 = false
+    @State var ans1: Bool = false
+    @State var ans2: Bool = false
     var q: Quiz
     @State var list: [String] = []
     @State var showText = false
@@ -31,26 +34,43 @@ struct QuizRowView: View {
                     Text("result")
                 }
                 if showText {
-                    ForEach(0..<list.count)  { n in
-                        Button(action: {self.showingDetail.toggle() }) {
-                            Text(self.list[n])
+                    Button(action: {
+                        self.showingDetail1.toggle()
+                        if self.list[0] == self.q.OKans {
+                            self.ans1 = true
+                        }else {
+                            self.ans1 = false
                         }
+                    }) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20,style: .continuous)
+                                .fill(Color.yellow)
+                                .frame(width: 200, height: 200)
+                            Text(list[0])
+                        }
+                    }.sheet(isPresented: $showingDetail1) {
+                        QuizAnswerView(ans: self.ans1)
                     }
-                    
-                        Button(action: {self.showingDetail.toggle() }) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 20,style: .continuous)
-                                    .fill(Color.yellow)
-                                    .frame(width: 200, height: 200)
-                                Text(q.BADans)
-                            }
-                        }.sheet(isPresented: $showingDetail) {
-                            Text("bubu")
+                    Button(action: {
+                        self.showingDetail2.toggle()
+                        if self.list[1] == self.q.OKans {
+                            self.ans2 = true
+                        }else {
+                            self.ans2 = false
                         }
+                    }) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20,style: .continuous)
+                                .fill(Color.red)
+                                .frame(width: 200, height: 200)
+                            Text(list[1])
+                        }
+                    }.sheet(isPresented: $showingDetail2) {
+                        QuizAnswerView()
+                    }
                 }
             }
         }
-        
     }
 }
 
