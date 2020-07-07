@@ -17,7 +17,6 @@ struct QuizRowView: View {
     @State var list: [String] = []
     @State var showText = false
     
-    
     var body: some View {
         NavigationView {
             VStack {
@@ -49,7 +48,8 @@ struct QuizRowView: View {
                             Text(list[0])
                         }
                     }.sheet(isPresented: $showingDetail1) {
-                        QuizAnswerView(ans: self.ans1)
+                        QuizAnswerView(ans: self.ans1, phrase: self.q.OKans,
+                                       sentence: self.q.correct)
                     }
                     Button(action: {
                         self.showingDetail2.toggle()
@@ -66,7 +66,8 @@ struct QuizRowView: View {
                             Text(list[1])
                         }
                     }.sheet(isPresented: $showingDetail2) {
-                        QuizAnswerView()
+                        QuizAnswerView(ans: self.ans2, phrase: self.q.OKans,
+                                       sentence: self.q.correct)
                     }
                 }
             }

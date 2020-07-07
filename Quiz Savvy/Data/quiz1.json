@@ -1,10 +1,11 @@
 [ 
     {
         "id":"001",
-        "title":"ljlajg",
-        "explain": "awggj",
-        "OKans": "nglegnkgkgb",
-        "BADans": "kngln",
+        "title":"クイズのタイトル",
+        "explain": "クイズの問題文",
+        "OKans": "正解",
+        "BADans": "不正解",
+        "correct":"クイズの解説",
         "favorite": false
     },
     {
@@ -13,6 +14,7 @@
         "explain": "awggj",
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
+        "correct":"jaj;ljgjg",
         "favorite": false
     },
     {
@@ -21,6 +23,7 @@
         "explain": "awggj",
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
+        "correct":"jaj;ljgjg",
         "favorite": false
     }
 ]
