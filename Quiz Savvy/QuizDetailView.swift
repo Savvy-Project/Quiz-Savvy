@@ -10,7 +10,7 @@ import SwiftUI
 
 struct QuizDetailView: View {
 
-    var num: String = ""
+    var num: String = "k"
     
     var body: some View {
         Text(num)
