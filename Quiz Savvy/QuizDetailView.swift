@@ -13,7 +13,9 @@ struct QuizDetailView: View {
     var num: String = "k"
     
     var body: some View {
-        Text(num)
+        ForEach(quizStore.quiz1.shuffled()) {q in
+            QuizRowView(q: q)
+        }
         
     }
 }

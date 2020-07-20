@@ -9,19 +9,33 @@
 import SwiftUI
 
 struct QuizAnswerView: View {
+    @Environment(\.presentationMode) var presentationMode
     @State var ans: Bool = false
     var phrase: String = ""
     var sentence: String = ""
     
     var body: some View {
-        VStack {
-            AnswerFragView(ans: ans)
-                .padding()
-            HStack {
-                Text("今回のフレーズ:")
-                Text(phrase)
-            }.padding()
-            Text(sentence)
+        NavigationView {
+            VStack {
+                AnswerFragView(ans: ans)
+                    .padding()
+                HStack {
+                    Text("今回のフレーズ:")
+                    Text(phrase)
+                }.padding()
+                
+                Text(sentence)
+                    .navigationBarItems(trailing: Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                        }
+                    ) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20,style:       .continuous)
+                                    .fill(Color.pink)
+                                    .frame(width: 200, height: 50)
+                                Text("次の問題へ")
+                        }})
+            }
         }
     }
 }
@@ -35,7 +49,6 @@ struct AnswerFragView: View {
             return Text("ばつ")
         }
     }
-    
 }
 
 struct QuizAnswerView_Previews: PreviewProvider {
@@ -43,3 +56,5 @@ struct QuizAnswerView_Previews: PreviewProvider {
         QuizAnswerView()
     }
 }
+
+

@@ -16,6 +16,7 @@ struct QuizRowView: View {
     var q: Quiz
     @State var list: [String] = []
     @State var showText = false
+    @State var Return: Bool = false
     
     var body: some View {
         NavigationView {
@@ -47,10 +48,13 @@ struct QuizRowView: View {
                                 .frame(width: 200, height: 200)
                             Text(list[0])
                         }
-                    }.sheet(isPresented: $showingDetail1) {
-                        QuizAnswerView(ans: self.ans1, phrase: self.q.OKans,
-                                       sentence: self.q.correct)
+                    }.sheet(isPresented: $showingDetail1, onDismiss: { self.Return.toggle()}) {
+                        QuizAnswerView(ans: self.ans1, phrase: self.q.OKans,sentence: self.q.correct)
                     }
+                    NavigationLink(destination: QuizDetailView(),isActive: $Return) {
+                        EmptyView()
+                    }
+                    
                     Button(action: {
                         self.showingDetail2.toggle()
                         if self.list[1] == self.q.OKans {
@@ -65,15 +69,19 @@ struct QuizRowView: View {
                                 .frame(width: 200, height: 200)
                             Text(list[1])
                         }
-                    }.sheet(isPresented: $showingDetail2) {
+                }.sheet(isPresented: $showingDetail2, onDismiss: { self.Return.toggle()}) {
                         QuizAnswerView(ans: self.ans2, phrase: self.q.OKans,
                                        sentence: self.q.correct)
+                    }
+                    NavigationLink(destination: QuizDetailView(),isActive: $Return) {
+                        EmptyView()
                     }
                 }
             }
         }
     }
 }
+
 
 struct QuizRowView_Previews: PreviewProvider {
     static var previews: some View {
