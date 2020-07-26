@@ -34,6 +34,7 @@ struct ChooseView: View {
             }
             .navigationBarTitle("Situation")
             
+            
         }
         .padding(.top,-45)
     }
