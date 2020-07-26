@@ -37,10 +37,8 @@ struct QuizListView: View {
                        }
                     }
                 }.navigationBarTitle("学校")
-                
-                
             }
-        }.navigationBarHidden(true)
+        }
         
     }
 }
