@@ -13,7 +13,7 @@ struct Situation : Hashable,Codable,Identifiable {
     public var type: String
     public var imageName: String
     public var image: Image { Image(imageName) }
-    public var quiz: String
+    public var quiznum: Int
 }
 
 

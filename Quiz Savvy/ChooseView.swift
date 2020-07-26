@@ -16,7 +16,7 @@ struct ChooseView: View {
             VStack {
                 ForEach(self.items) { item in
                    ZStack{
-                    NavigationLink(destination: QuizDetailView(num: item.quiz)) {
+                    NavigationLink(destination: QuizListView(num: item.quiznum)) {
                             item.image
                                 .renderingMode(.original)
                                 .resizable()

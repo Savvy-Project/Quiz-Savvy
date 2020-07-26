@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct QuizAnswerView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentation
     @State var ans: Bool = false
+    @State var Next: Bool = false
+    @State var Return: Bool = false
     var phrase: String = ""
     var sentence: String = ""
+    var numB: Int = 1
+    
     
     var body: some View {
-        NavigationView {
+      
             VStack {
                 AnswerFragView(ans: ans)
                     .padding()
@@ -25,18 +29,28 @@ struct QuizAnswerView: View {
                 }.padding()
                 
                 Text(sentence)
-                    .navigationBarItems(trailing: Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
+                
+                HStack {
+                    Button(action: {
+                        self.Return.toggle()
+                        self.presentation.wrappedValue.dismiss()
+                    }) {
+                        Text("Top")
+                        
+                    }
+                    
+                    Button(action: {
+                        self.Next.toggle()
+                    }) {
+                        Text("次の問題へ")
+                        NavigationLink(destination: QuizListView(num: numB), isActive: $Next) {
+                            EmptyView()
                         }
-                    ) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20,style:       .continuous)
-                                    .fill(Color.pink)
-                                    .frame(width: 200, height: 50)
-                                Text("次の問題へ")
-                        }})
-            }
-        }
+                    }
+                    
+                }
+            }.navigationBarHidden(true)
+       
     }
 }
 

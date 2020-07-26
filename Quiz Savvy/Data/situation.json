@@ -3,12 +3,12 @@
         "id":"001",
         "type": "日常",
         "imageName": "situation1",
-        "quiz": "1"
+        "quiznum": 1
     },
     {
         "id":"002",
         "type": "学校",
         "imageName": "situation2",
-        "quiz": "2"
+        "quiznum": 2
     }
 ]
