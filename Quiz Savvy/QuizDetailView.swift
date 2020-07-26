@@ -56,7 +56,7 @@ struct QuizDetailView: View {
                             EmptyView()
                         }
                     
-                    }
+                    }.navigationBarHidden(true)
                     
                     Button(action: {
                         self.showingDetail2.toggle()
@@ -75,7 +75,7 @@ struct QuizDetailView: View {
                         NavigationLink(destination:  QuizAnswerView(ans: self.ans2, phrase: self.now.OKans,sentence: self.now.correct, numB: numA), isActive: $showingDetail2) {
                             EmptyView()
                         }
-                    }
+                    }.navigationBarHidden(true)
                 }
             }.navigationBarHidden(true)
        

@@ -26,7 +26,8 @@ struct QuizListView: View {
                                 Text(self.a[k].title)
                         }
                     }
-                }.navigationBarTitle("日常")
+                }
+                .navigationBarTitle("日常")
                 
             }
             if num == 2 {
@@ -36,7 +37,9 @@ struct QuizListView: View {
                            Text(self.b[o].title)
                        }
                     }
-                }.navigationBarTitle("学校")
+                }
+                .navigationBarTitle("学校")
+                
             }
         }
         
