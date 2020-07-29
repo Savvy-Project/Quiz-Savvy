@@ -30,35 +30,51 @@ struct QuizAnswerView: View {
                 }.padding()
                 
                 Text(quizes.sentence)
+                .frame(width: 400, height: 400)
                 
                 Button(action: {
                     self.Star.toggle()
                 }) {
                     if Star {
                         Image(systemName: "star.fill")
+                            .resizable()
+                            .foregroundColor(Color.yellow)
+                            .frame(width: 30, height: 30)
                         
                     }else {
                         Image(systemName: "star")
+                            .resizable()
+                            .foregroundColor(Color.black)
+                            .frame(width: 30, height: 30)
                     }
                 }
                 
                 
                 
-                HStack {
+                HStack(spacing: 20) {
                     Button(action: {
                         self.Return.toggle()
                         self.presentation.wrappedValue.dismiss()
                     }) {
                         Text("Top")
-                        
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                            .frame(width: 120, height: 40)
+                            .background(Color.yellow)
+                            .cornerRadius(10)
                     }
                     
                     Button(action: {
                         self.Next.toggle()
                     }) {
                         Text("次の問題へ")
-                        NavigationLink(destination: QuizListView(num: numB), isActive: $Next) {
-                            EmptyView()
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                            .frame(width: 120, height: 40)
+                            .background(Color.green)
+                            .cornerRadius(10)
+                            NavigationLink(destination: QuizListView(num: numB), isActive: $Next) {
+                                EmptyView()
                         }
                     }
                     
@@ -70,15 +86,20 @@ struct QuizAnswerView: View {
 
 
 struct AnswerFragView: View {
-    var ans: Bool = false 
+    var ans: Bool = false
     var body: some View {
         if ans == true {
-            return Text("まる")
+            return Image(systemName: "circle")
+            .resizable()
+            .frame(width: 60, height: 60)
         } else {
-            return Text("ばつ")
+            return Image(systemName: "multiply")
+            .resizable()
+            .frame(width: 60, height: 60)
         }
     }
 }
+
 
 struct QuizAnswerView_Previews: PreviewProvider {
     static var previews: some View {
