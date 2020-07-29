@@ -81,8 +81,9 @@ struct QuizAnswerView: View {
                     
                 }
             }.navigationBarHidden(true)
-       
+         .padding(.bottom,88)
     }
+                   
 }
 
 
