@@ -9,35 +9,97 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var selection = 0
+    @State private var selection = 1
     
     var body: some View {
-        TabView(selection: $selection){
-            TopView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "tornado")
-                        Text("Top")
-                    }
-                }.tag(0)
-           
-            ChooseView(items: situationStore)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "person.fill")
-                        Text("Quiz")
-                    }
-                }.tag(1)
-           
-           FavoriteView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "cart.fill")
-                        Text("Favorite")
-                    }
-                }.tag(2)
+        ZStack {
+            Page1()
+                .opacity(selection == 1 ? 1 : 0)
+                .offset(x :selection == 1 ? 0 : 100)
+                .animation(Animation.spring())
+            
+            Page2()
+                .opacity(selection == 2 ? 1 : 0)
+                .offset(x : selection == 2 ? 0 : 100)
+                .animation(Animation.spring())
+            
+            Page3()
+                .opacity(selection == 3 ? 1 : 0)
+                .offset(x : selection == 3 ? 0 : 100)
+                .animation(Animation.spring())
+            
+            ContentView(selection: $selection)
         }
-        .navigationBarBackButtonHidden(true)
+    }
+}
+
+struct ContentView: View {
+    @Binding var selection: Int
+    var width = UIScreen.main.bounds.width
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            ZStack {
+                Rectangle()
+                    .foregroundColor(Color.gray)
+                    .frame(width: width, height: 88)
+
+                HStack(spacing: 88) {
+                    Button(action: {
+                        self.selection = 1
+                    }) {
+                        VStack {
+                            Image(systemName: "tornado")
+                                .foregroundColor(Color.red)
+                                .font(.system(size: 32, weight: .bold, design: .rounded))
+
+                        }
+                    }.padding(.bottom, 24)
+
+                    Button(action: {
+                        self.selection = 2
+                    }) {
+                        VStack {
+                            Image(systemName: "person.fill")
+                                .foregroundColor(Color.yellow)
+                                .font(.system(size: 32, weight: .bold, design: .rounded))
+
+                        }
+                    }.padding(.bottom, 24)
+
+                    Button(action: {
+                        self.selection = 3
+                    }) {
+                        VStack {
+                            Image(systemName: "cart.fill")
+                                .foregroundColor(Color.green)
+                                .font(.system(size: 32, weight: .bold, design: .rounded))
+
+                        }
+                    }.padding(.bottom, 24)
+
+                }
+            }
+        }
+        .edgesIgnoringSafeArea(.bottom)
+    }
+}
+
+struct Page1: View {
+    var body: some View {
+        TopView()
+    }
+}
+struct Page2: View {
+    var body: some View {
+        ChooseView(items: situationStore)
+    }
+}
+
+struct Page3: View {
+    var body: some View {
+        FavoriteView()
     }
 }
 

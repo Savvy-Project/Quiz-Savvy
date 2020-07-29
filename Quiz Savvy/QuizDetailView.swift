@@ -52,7 +52,7 @@ struct QuizDetailView: View {
                                 .frame(width: 200, height: 100)
                             Text(list[0])
                         }
-                        NavigationLink(destination: QuizAnswerView(ans: self.ans1, phrase: self.now.OKans, sentence: self.now.correct, numB: numA), isActive: $showingDetail1) {
+                        NavigationLink(destination: QuizAnswerView(ans: self.ans1, quizes: now, numB: numA), isActive: $showingDetail1) {
                             EmptyView()
                         }
                     
@@ -72,7 +72,7 @@ struct QuizDetailView: View {
                                 .frame(width: 200, height: 100)
                             Text(list[1])
                         }
-                        NavigationLink(destination:  QuizAnswerView(ans: self.ans2, phrase: self.now.OKans,sentence: self.now.correct, numB: numA), isActive: $showingDetail2) {
+                        NavigationLink(destination:  QuizAnswerView(ans: self.ans2, quizes: now, numB: numA), isActive: $showingDetail2) {
                             EmptyView()
                         }
                     }.navigationBarHidden(true)

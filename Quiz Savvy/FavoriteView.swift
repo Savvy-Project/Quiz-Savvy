@@ -9,10 +9,21 @@
 import SwiftUI
 
 struct FavoriteView: View {
+    var U: [Quiz] = quizStore.quiz1
+    var R: [Quiz] = quizStore.quiz2
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(U) { u in
+                if u.favorite == true {
+                    Text(u.OKans)
+                }
+                
+            }
+        }
     }
 }
+
 
 struct FavoriteView_Previews: PreviewProvider {
     static var previews: some View {

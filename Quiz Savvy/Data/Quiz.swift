@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct Quiz : Hashable,Codable,Identifiable {
-    public var id: String
+    public var id: Int
     public var title: String
     public var explain: String
     public var OKans: String
     public var BADans: String
     public var favorite: Bool
-    public var correct: String
+    public var sentence: String
 }
 

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Situation : Hashable,Codable,Identifiable {
-    public var id: String
+    public var id: Int
     public var type: String
     public var imageName: String
     public var image: Image { Image(imageName) }
