@@ -11,7 +11,6 @@ import SwiftUI
 struct QuizAnswerView: View {
     @Environment(\.presentationMode) var presentation
     @State var ans: Bool = false
-    @State var Next: Bool = false
     @State var Return: Bool = false
     @State var Star: Bool = false
     @State var quizes: Quiz
@@ -53,14 +52,7 @@ struct QuizAnswerView: View {
                         
                     }
                     
-                    Button(action: {
-                        self.Next.toggle()
-                    }) {
-                        Text("次の問題へ")
-                        NavigationLink(destination: QuizListView(num: numB), isActive: $Next) {
-                            EmptyView()
-                        }
-                    }
+                    
                     
                 }
             }.navigationBarHidden(true)

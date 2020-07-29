@@ -9,18 +9,9 @@
 import SwiftUI
 
 struct FavoriteView: View {
-    var U: [Quiz] = quizStore.quiz1
-    var R: [Quiz] = quizStore.quiz2
     
     var body: some View {
-        List {
-            ForEach(U) { u in
-                if u.favorite == true {
-                    Text(u.OKans)
-                }
-                
-            }
-        }
+        Text("うんちぶりぶり")
     }
 }
 
