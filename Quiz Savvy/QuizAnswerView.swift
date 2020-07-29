@@ -14,6 +14,8 @@ struct QuizAnswerView: View {
     @State var Return: Bool = false
     @State var Star: Bool = false
     @State var quizes: Quiz
+    @State var Next = false
+    
     
     var numB: Int = 1
     
