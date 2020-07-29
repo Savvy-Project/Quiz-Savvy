@@ -13,7 +13,14 @@ struct QuizRowView: View {
     var body: some View {
         HStack {
             Text(i.title)
+            
+            if i.favorite {
+                Image(systemName: "star.fill")
+                    .imageScale(.medium)
+                    .foregroundColor(.yellow)
+            }
         }
+        
     }
 }
 

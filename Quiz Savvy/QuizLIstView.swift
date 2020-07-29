@@ -11,11 +11,9 @@ import SwiftUI
 struct QuizListView: View {
     var a: [Quiz] = quizStore.quiz1
     var b: [Quiz] = quizStore.quiz2
-    var x:Int = quizStore.quiz1.count-1
-    var y:Int = quizStore.quiz2.count-1
     
 
-    var num: Int = 1
+    @State var num: Int = 1
     
     var body: some View {
         VStack {
@@ -26,7 +24,8 @@ struct QuizListView: View {
                                 Text(self.a[k].title)
                         }
                     }
-                }.navigationBarTitle("日常")
+                }
+                .navigationBarTitle("日常")
                 
             }
             if num == 2 {
@@ -36,7 +35,9 @@ struct QuizListView: View {
                            Text(self.b[o].title)
                        }
                     }
-                }.navigationBarTitle("学校")
+                }
+                .navigationBarTitle("学校")
+                
             }
         }
         

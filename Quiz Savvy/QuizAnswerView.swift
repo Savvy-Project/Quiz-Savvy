@@ -13,8 +13,9 @@ struct QuizAnswerView: View {
     @State var ans: Bool = false
     @State var Next: Bool = false
     @State var Return: Bool = false
-    var phrase: String = ""
-    var sentence: String = ""
+    @State var Star: Bool = false
+    @State var quizes: Quiz
+    
     var numB: Int = 1
     
     
@@ -25,10 +26,23 @@ struct QuizAnswerView: View {
                     .padding()
                 HStack {
                     Text("今回のフレーズ:")
-                    Text(phrase)
+                    Text(quizes.OKans)
                 }.padding()
                 
-                Text(sentence)
+                Text(quizes.sentence)
+                
+                Button(action: {
+                    self.Star.toggle()
+                }) {
+                    if Star {
+                        Image(systemName: "star.fill")
+                        
+                    }else {
+                        Image(systemName: "star")
+                    }
+                }
+                
+                
                 
                 HStack {
                     Button(action: {
@@ -54,6 +68,7 @@ struct QuizAnswerView: View {
     }
 }
 
+
 struct AnswerFragView: View {
     var ans: Bool = false 
     var body: some View {
@@ -67,7 +82,7 @@ struct AnswerFragView: View {
 
 struct QuizAnswerView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizAnswerView()
+        QuizAnswerView(quizes: quizStore.quiz1[0])
     }
 }
 

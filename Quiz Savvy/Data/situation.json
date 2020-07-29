@@ -1,12 +1,12 @@
 [
     {
-        "id":"001",
+        "id": 1
         "type": "日常",
         "imageName": "situation1",
         "quiznum": 1
     },
     {
-        "id":"002",
+        "id": 2,
         "type": "学校",
         "imageName": "situation2",
         "quiznum": 2

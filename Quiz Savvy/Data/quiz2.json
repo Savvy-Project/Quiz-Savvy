@@ -1,29 +1,29 @@
 [
     {
-        "id":"001",
+        "id": 2001,
         "title":"ljlajg",
         "explain": "awggj",
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
-        "correct":"jaj;ljgjg",
+        "sentence":"jaj;ljgjg",
         "favorite": false
     },
     {
-        "id":"002",
+        "id": 2002,
         "title":"ljlajg",
         "explain": "awggj",
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
-        "correct":"jaj;ljgjg",
+        "sentence":"jaj;ljgjg",
         "favorite": false
     },
     {
-        "id":"003",
+        "id": 2003,
         "title":"ljlajg",
         "explain": "awggj",
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
-        "correct":"jaj;ljgjg",
+        "sentence":"jaj;ljgjg",
         "favorite": false
     }
 ]

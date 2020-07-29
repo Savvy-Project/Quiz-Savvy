@@ -1,29 +1,29 @@
 [ 
     {
-        "id":"001",
+        "id": 1001,
         "title":"クイズのタイトル",
         "explain": "クイズの問題文",
         "OKans": "正解",
         "BADans": "不正解",
-        "correct":"クイズの解説",
+        "sentence":"クイズの解説",
         "favorite": false
     },
     {
-        "id":"002",
+        "id": 1002,
         "title":"ljlajg",
         "explain": "awggj",
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
-        "correct":"jaj;ljgjg",
+        "sentence":"jaj;ljgjg",
         "favorite": false
     },
     {
-        "id":"003",
+        "id": 1003,
         "title":"ljlajg",
         "explain": "awggj",
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
-        "correct":"jaj;ljgjg",
+        "sentence":"jaj;ljgjg",
         "favorite": false
     }
 ]

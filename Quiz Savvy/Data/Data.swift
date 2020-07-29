@@ -13,8 +13,8 @@ struct QuizStore {
     let quiz2: [Quiz] = load("quiz2.json")
 }
 
-let situationStore: [Situation] = load("situation.json")
-let quizStore = QuizStore()
+var situationStore: [Situation] = load("situation.json")
+var quizStore = QuizStore()
 
 
 
