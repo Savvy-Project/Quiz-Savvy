@@ -13,7 +13,6 @@
 		CC64C03024AF4D8500724BC2 /* quiz2.json in Resources */ = {isa = PBXBuildFile; fileRef = CC64C02F24AF4D8500724BC2 /* quiz2.json */; };
 		CC64C03224AF4E9B00724BC2 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64C03124AF4E9B00724BC2 /* Quiz.swift */; };
 		CC64C03424B1F70D00724BC2 /* QuizAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC64C03324B1F70D00724BC2 /* QuizAnswerView.swift */; };
-		CC9DC71224D06C2500C97BFC /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DC71124D06C2500C97BFC /* UserData.swift */; };
 		CCDFDC8724A8568700A09046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDC8624A8568700A09046 /* AppDelegate.swift */; };
 		CCDFDC8924A8568700A09046 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDC8824A8568700A09046 /* SceneDelegate.swift */; };
 		CCDFDC8D24A8568900A09046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDFDC8C24A8568900A09046 /* Assets.xcassets */; };
@@ -56,7 +55,6 @@
 		CC64C02F24AF4D8500724BC2 /* quiz2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quiz2.json; sourceTree = "<group>"; };
 		CC64C03124AF4E9B00724BC2 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		CC64C03324B1F70D00724BC2 /* QuizAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerView.swift; sourceTree = "<group>"; };
-		CC9DC71124D06C2500C97BFC /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		CCDFDC8324A8568600A09046 /* Quiz Savvy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz Savvy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDFDC8624A8568700A09046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCDFDC8824A8568700A09046 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				CCDFDCC724AA07AF00A09046 /* Situation.swift */,
 				CCDFDCC924AA080600A09046 /* Data.swift */,
 				CC64C03124AF4E9B00724BC2 /* Quiz.swift */,
-				CC9DC71124D06C2500C97BFC /* UserData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -326,7 +323,6 @@
 				CCDFDCC124A870C400A09046 /* FavoriteView.swift in Sources */,
 				CCDFDCCA24AA080600A09046 /* Data.swift in Sources */,
 				CC64C03224AF4E9B00724BC2 /* Quiz.swift in Sources */,
-				CC9DC71224D06C2500C97BFC /* UserData.swift in Sources */,
 				CCDFDC8724A8568700A09046 /* AppDelegate.swift in Sources */,
 				CCDFDCBF24A8581100A09046 /* QuizLIstView.swift in Sources */,
 				CCDFDC8924A8568700A09046 /* SceneDelegate.swift in Sources */,
@@ -511,7 +507,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.man.Quiz-Savvy";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.manQuiz-Savvy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,7 +527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.man.Quiz-Savvy";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.manQuiz-Savvy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

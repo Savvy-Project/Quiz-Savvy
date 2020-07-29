@@ -11,7 +11,6 @@ import SwiftUI
 struct QuizAnswerView: View {
     @Environment(\.presentationMode) var presentation
     @State var ans: Bool = false
-    @State var Next: Bool = false
     @State var Return: Bool = false
     @State var Star: Bool = false
     @State var quizes: Quiz

@@ -1,5 +1,5 @@
 //
-//  FavoriteView.swift
+//  TopView.swift
 //  Quiz Savvy
 //
 //  Created by 青木智大 on 2020/06/28.
@@ -8,16 +8,17 @@
 
 import SwiftUI
 
-struct FavoriteView: View {
+struct TopView: View {
     
     var body: some View {
-        Text("うんちぶりぶり")
+        Text("おまんまん")
+        
     }
 }
 
-
-struct FavoriteView_Previews: PreviewProvider {
+struct TopView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteView()
+        TopView()
     }
 }
+

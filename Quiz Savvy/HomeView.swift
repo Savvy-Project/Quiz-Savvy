@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var selection = 1
+    @State var selection = 1
     
     var body: some View {
         ZStack {
