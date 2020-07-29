@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
     @State var selection = 1
     
@@ -45,39 +46,40 @@ struct ContentView: View {
                     .foregroundColor(Color.gray)
                     .frame(width: width, height: 88)
 
-                HStack(spacing: 88) {
+                HStack(spacing: 80) {
                     Button(action: {
                         self.selection = 1
                     }) {
                         VStack {
-                            Image(systemName: "tornado")
+                            Image(systemName: "film")
                                 .foregroundColor(Color.red)
-                                .font(.system(size: 32, weight: .bold, design: .rounded))
+                                .font(.system(size: 30, weight: .bold, design: .rounded))
 
                         }
-                    }.padding(.bottom, 24)
+                    }.padding(.bottom, 15)
+
 
                     Button(action: {
                         self.selection = 2
                     }) {
                         VStack {
-                            Image(systemName: "person.fill")
+                            Image(systemName: "questionmark.circle.fill")
                                 .foregroundColor(Color.yellow)
                                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
                         }
-                    }.padding(.bottom, 24)
+                    }.padding(.bottom, 15)
 
                     Button(action: {
                         self.selection = 3
                     }) {
                         VStack {
-                            Image(systemName: "cart.fill")
+                            Image(systemName: "bookmark.fill")
                                 .foregroundColor(Color.green)
-                                .font(.system(size: 32, weight: .bold, design: .rounded))
+                                .font(.system(size: 33, weight: .bold, design: .rounded))
 
                         }
-                    }.padding(.bottom, 24)
+                    }.padding(.bottom, 15)
 
                 }
             }
