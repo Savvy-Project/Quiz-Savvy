@@ -12,6 +12,7 @@ struct TopView: View {
     
     var body: some View {
         Text("マックス大好き")
+        
     }
 }
 

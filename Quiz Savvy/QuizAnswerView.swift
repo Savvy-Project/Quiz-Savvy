@@ -9,20 +9,28 @@
 import SwiftUI
 
 struct QuizAnswerView: View {
+    @EnvironmentObject var userData: UserData
     @Environment(\.presentationMode) var presentation
     @State var ans: Bool = false
     @State var Return: Bool = false
     @State var Star: Bool = false
     @State var quizes: Quiz
     @State var Next = false
+
+    var quiz1Index: Int {
+        userData.quizStore1.firstIndex(where: { $0.id == quizes.id })!
+    }
     
-    
+    var quiz2Index: Int {
+        userData.quizStore2.firstIndex(where: { $0.id == quizes.id })!
+    }
     var numB: Int = 1
     
     
     var body: some View {
       
             VStack {
+                
                 AnswerFragView(ans: ans)
                     .padding()
                 HStack {
@@ -33,29 +41,52 @@ struct QuizAnswerView: View {
                 Text(quizes.sentence)
                 .frame(width: 400, height: 400)
                 
-                Button(action: {
-                    self.Star.toggle()
-                }) {
-                    if Star {
-                        Image(systemName: "star.fill")
-                            .resizable()
-                            .foregroundColor(Color.yellow)
-                            .frame(width: 30, height: 30)
+                if numB == 1 {
+                    Button(action: {
+                        self.userData.quizStore1[self.quiz1Index].favorite.toggle()
                         
-                    }else {
-                        Image(systemName: "star")
-                            .resizable()
-                            .foregroundColor(Color.black)
-                            .frame(width: 30, height: 30)
+                    }) {
+                        if self.userData.quizStore1[self.quiz1Index].favorite {
+                            Image(systemName: "star.fill")
+                                .resizable()
+                                .foregroundColor(Color.yellow)
+                                .frame(width: 30, height: 30)
+                            
+                        }else {
+                            Image(systemName: "star")
+                                .resizable()
+                                .foregroundColor(Color.black)
+                                .frame(width: 30, height: 30)
+                        }
                     }
+                    
+                }else if numB == 2 {
+                    Button(action: {
+                        self.userData.quizStore2[self.quiz2Index].favorite.toggle()
+                        
+                    }) {
+                        if self.userData.quizStore2[self.quiz2Index].favorite {
+                            Image(systemName: "star.fill")
+                                .resizable()
+                                .foregroundColor(Color.yellow)
+                                .frame(width: 30, height: 30)
+                            
+                        }else {
+                            Image(systemName: "star")
+                                .resizable()
+                                .foregroundColor(Color.black)
+                                .frame(width: 30, height: 30)
+                        }
+                    }
+                    
                 }
+               
                 
                 
                 
                 HStack(spacing: 20) {
                     Button(action: {
                         self.Return.toggle()
-                        self.presentation.wrappedValue.dismiss()
                     }) {
                         Text("Top")
                             .font(.headline)
@@ -78,9 +109,8 @@ struct QuizAnswerView: View {
                                 EmptyView()
                         }
                     }
-                    
                 }
-            }.navigationBarHidden(true)
+        }.navigationBarHidden(true)
          .padding(.bottom,88)
     }
                    
@@ -105,7 +135,9 @@ struct AnswerFragView: View {
 
 struct QuizAnswerView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizAnswerView(quizes: quizStore.quiz1[0])
+        let userData = UserData()
+        return QuizAnswerView(quizes: userData.quizStore1[0])
+                    .environmentObject(userData)
     }
 }
 

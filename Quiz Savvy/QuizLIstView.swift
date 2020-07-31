@@ -9,19 +9,18 @@
 import SwiftUI
 
 struct QuizListView: View {
-    var a: [Quiz] = quizStore.quiz1
-    var b: [Quiz] = quizStore.quiz2
+    @EnvironmentObject var userData: UserData
     
 
-    @State var num: Int = 1
+    @State var num: Int = 2
     
     var body: some View {
         VStack {
             if num == 1 {
                 List {
-                    ForEach(0..<a.count, id: \.self) { k in
-                        NavigationLink(destination: QuizDetailView(now: self.a[k], next: self.a[k], numA: self.num)) {
-                                Text(self.a[k].title)
+                    ForEach(0..<userData.quizStore1.count, id: \.self) { k in
+                        NavigationLink(destination: QuizDetailView(now: self.userData.quizStore1[k], numA: self.num)) {
+                                Text(self.userData.quizStore1[k].title)
                         }
                     }
                 }
@@ -30,9 +29,9 @@ struct QuizListView: View {
             }
             if num == 2 {
                 List {
-                    ForEach(0..<b.count, id: \.self) { o in
-                        NavigationLink(destination: QuizDetailView(now: self.b[o], next: self.b[o], numA: self.num)) {
-                           Text(self.b[o].title)
+                    ForEach(0..<userData.quizStore2.count, id: \.self) { o in
+                        NavigationLink(destination: QuizDetailView(now: self.userData.quizStore2[o], numA: self.num)) {
+                           Text(self.userData.quizStore2[o].title)
                        }
                     }
                 }
@@ -50,6 +49,6 @@ struct QuizListView: View {
 struct QuizListView_Previews: PreviewProvider {
     static var previews: some View {
         QuizListView()
-            
+            .environmentObject(UserData())
     }
 }

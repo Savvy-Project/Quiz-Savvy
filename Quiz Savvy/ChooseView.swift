@@ -13,7 +13,7 @@ struct ChooseView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing:30) {
+            VStack(spacing:30.0) {
                 ForEach(self.items) { item in
                    ZStack{
                     NavigationLink(destination: QuizListView(num: item.quiznum)) {
@@ -34,6 +34,7 @@ struct ChooseView: View {
                     }
                 }
             }
+            .padding(.top)
             .navigationBarTitle("Situation")
            
             
@@ -48,5 +49,6 @@ struct ChooseView: View {
 struct ChooseView_Previews: PreviewProvider {
     static var previews: some View {
         ChooseView(items: situationStore)
+            .environmentObject(UserData())
     }
 }

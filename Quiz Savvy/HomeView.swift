@@ -31,6 +31,7 @@ struct HomeView: View {
             
             ContentView(selection: $selection)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -83,8 +84,7 @@ struct ContentView: View {
 
                 }
             }
-        }
-        .edgesIgnoringSafeArea(.bottom)
+        }.edgesIgnoringSafeArea(.bottom)
     }
 }
 

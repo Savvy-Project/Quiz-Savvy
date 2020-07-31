@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct QuizDetailView: View {
+    @EnvironmentObject var userData: UserData
     @State var showingDetail1 = false
     @State var showingDetail2 = false
     @State var ans1: Bool = false
@@ -16,7 +17,6 @@ struct QuizDetailView: View {
     @State var list: [String] = []
     @State var showText = false
     var now: Quiz
-    var next: Quiz
     var i: Int = 0
     var numA: Int = 0
     
@@ -85,6 +85,9 @@ struct QuizDetailView: View {
 
 struct QuizDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizDetailView(now: quizStore.quiz1[0], next: quizStore.quiz1[1])
+        let userData = UserData()
+        return QuizDetailView(now: userData.quizStore1[0])
+                    .environmentObject(userData)
     }
 }
+

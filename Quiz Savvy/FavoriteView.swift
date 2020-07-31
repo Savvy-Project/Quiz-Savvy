@@ -9,9 +9,37 @@
 import SwiftUI
 
 struct FavoriteView: View {
+    @EnvironmentObject var userData: UserData
+    @State var Sheet = false
+
+    
     
     var body: some View {
-        Text("うんちぶりぶり")
+        List {
+            ForEach(userData.quizStore1) { t in
+                if t.favorite == true {
+                    Button(action:{
+                        self.Sheet.toggle()
+                    }) {
+                        Text(t.title)
+                    }.sheet(isPresented: self.$Sheet) {
+                        Text("e")
+                    }
+                    
+                }
+            }
+            ForEach(userData.quizStore2) { t in
+                if t.favorite == true {
+                    Button(action:{
+                        self.Sheet.toggle()
+                    }) {
+                        Text(t.title)
+                    }.sheet(isPresented: self.$Sheet) {
+                        Text("m")
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -19,5 +47,7 @@ struct FavoriteView: View {
 struct FavoriteView_Previews: PreviewProvider {
     static var previews: some View {
         FavoriteView()
+              .environmentObject(UserData())
+        
     }
 }
