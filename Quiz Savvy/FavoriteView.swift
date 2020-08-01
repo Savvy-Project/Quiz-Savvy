@@ -23,7 +23,7 @@ struct FavoriteView: View {
                     }) {
                         Text(t.title)
                     }.sheet(isPresented: self.$Sheet) {
-                        Text("e")
+                        FavoriteDetailView(r: t)
                     }
                     
                 }
@@ -35,7 +35,7 @@ struct FavoriteView: View {
                     }) {
                         Text(t.title)
                     }.sheet(isPresented: self.$Sheet) {
-                        Text("m")
+                        FavoriteDetailView(r: t)
                     }
                 }
             }

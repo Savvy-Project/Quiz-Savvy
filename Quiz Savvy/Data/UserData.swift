@@ -10,7 +10,6 @@ import SwiftUI
 import Combine
 
 final class UserData: ObservableObject {
-    @Published var isFavorite = false
     @Published var quizStore1 = quizStore.quiz1
     @Published var quizStore2 = quizStore.quiz2
 }
