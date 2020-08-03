@@ -17,6 +17,9 @@ struct QuizDetailView: View {
     @State var list: [String] = []
     @State var showText = false
     @State var result = true
+    @State var titleon = true
+    @State var explainon = false
+    
     var now: Quiz
     var i: Int = 0
     var numA: Int = 0
@@ -24,10 +27,16 @@ struct QuizDetailView: View {
     var body: some View {
         
             VStack {
-                Text(now.title)
+                if titleon{
+                    Text(now.title)
                     .font(.largeTitle)
-                Text(now.explain)
+                }
+                
+                if explainon{
+                    Text(now.explain)
                     .font(.headline)
+                }
+                
                 Spacer()
                 if result {
                     Button(action: {
@@ -37,6 +46,8 @@ struct QuizDetailView: View {
                         self.list.shuffle()
                         self.result.toggle()
                         self.showText.toggle()
+                        self.titleon.toggle()
+                        self.explainon.toggle()
                 }) {
                     Image(systemName: "circle")
                         .renderingMode(.original)
