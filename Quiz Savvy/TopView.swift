@@ -11,7 +11,7 @@ import SwiftUI
 struct TopView: View {
     
     var body: some View {
-        Text("マックス大好き")
+        Text("おまんまん濡れちゃった！///")
         
     }
 }
