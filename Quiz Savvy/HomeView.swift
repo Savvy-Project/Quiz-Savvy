@@ -30,6 +30,7 @@ struct HomeView: View {
                 .animation(Animation.spring())
             
             ContentView(selection: $selection)
+            .navigationBarHidden(true)
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -85,6 +86,7 @@ struct ContentView: View {
                 }
             }
         }.edgesIgnoringSafeArea(.bottom)
+        .navigationBarTitle("")
     }
 }
 

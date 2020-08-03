@@ -23,7 +23,6 @@ struct StartView: View {
                         .font(.largeTitle)
                 }
             }
-            
         }
     }
 }

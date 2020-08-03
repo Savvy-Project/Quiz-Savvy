@@ -16,6 +16,7 @@ struct QuizDetailView: View {
     @State var ans2: Bool = false
     @State var list: [String] = []
     @State var showText = false
+    @State var result = true
     var now: Quiz
     var i: Int = 0
     var numA: Int = 0
@@ -26,16 +27,19 @@ struct QuizDetailView: View {
                 Text(now.title)
                 Text(now.explain)
                 Spacer()
-                Button(action: {
-                    self.list = []
-                    self.list.append(self.now.OKans)
-                    self.list.append(self.now.BADans)
-                    self.list.shuffle()
-                    self.showText.toggle()
+                if result {
+                    Button(action: {
+                        self.list = []
+                        self.list.append(self.now.OKans)
+                        self.list.append(self.now.BADans)
+                        self.list.shuffle()
+                        self.result.toggle()
+                        self.showText.toggle()
                 }) {
                     Text("result")
                         .padding(.bottom)
                         .frame(height: 200.0)
+                }
                 }
                 if showText {
                     Button(action: {
@@ -51,6 +55,8 @@ struct QuizDetailView: View {
                                 .fill(Color.yellow)
                                 .frame(width: 200, height: 100)
                             Text(list[0])
+                            .foregroundColor(Color.white)
+                            .font(.headline)
                         }
                         NavigationLink(destination: QuizAnswerView(ans: self.ans1, quizes: now, numB: numA), isActive: $showingDetail1) {
                             EmptyView()
@@ -71,6 +77,8 @@ struct QuizDetailView: View {
                                 .fill(Color.red)
                                 .frame(width: 200, height: 100)
                             Text(list[1])
+                            .foregroundColor(Color.white)
+                            .font(.headline)
                         }
                         NavigationLink(destination:  QuizAnswerView(ans: self.ans2, quizes: now, numB: numA), isActive: $showingDetail2) {
                             EmptyView()

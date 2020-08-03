@@ -20,7 +20,7 @@ struct QuizListView: View {
                 List {
                     ForEach(0..<userData.quizStore1.count, id: \.self) { k in
                         NavigationLink(destination: QuizDetailView(now: self.userData.quizStore1[k], numA: self.num)) {
-                                Text(self.userData.quizStore1[k].title)
+                            Text(self.userData.quizStore1[k].title)
                         }
                     }
                 }
@@ -31,7 +31,7 @@ struct QuizListView: View {
                 List {
                     ForEach(0..<userData.quizStore2.count, id: \.self) { o in
                         NavigationLink(destination: QuizDetailView(now: self.userData.quizStore2[o], numA: self.num)) {
-                           Text(self.userData.quizStore2[o].title)
+                            Text(self.userData.quizStore2[o].title)
                        }
                     }
                 }

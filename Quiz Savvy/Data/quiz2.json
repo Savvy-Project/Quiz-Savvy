@@ -6,7 +6,8 @@
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
         "sentence":"jaj;ljgjg",
-        "favorite": false
+        "favorite": false,
+        "already": false
     },
     {
         "id": 2002,
@@ -15,7 +16,8 @@
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
         "sentence":"jaj;ljgjg",
-        "favorite": false
+        "favorite": false,
+        "already": false
     },
     {
         "id": 2003,
@@ -24,6 +26,7 @@
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
         "sentence":"jaj;ljgjg",
-        "favorite": false
+        "favorite": false,
+        "already": false
     }
 ]

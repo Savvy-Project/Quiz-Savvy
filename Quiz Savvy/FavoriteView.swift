@@ -15,27 +15,31 @@ struct FavoriteView: View {
     
     
     var body: some View {
-        List {
-            ForEach(userData.quizStore1) { t in
-                if t.favorite == true {
-                    Button(action:{
-                        self.Sheet.toggle()
-                    }) {
-                        Text(t.title)
-                    }.sheet(isPresented: self.$Sheet) {
-                        FavoriteDetailView(r: t)
+        VStack{
+            Text("Favorite")
+                .font(.largeTitle)
+            List {
+                ForEach(userData.quizStore1) { t in
+                    if t.favorite == true {
+                        Button(action:{
+                            self.Sheet.toggle()
+                        }) {
+                            Text(t.title)
+                        }.sheet(isPresented: self.$Sheet) {
+                            FavoriteDetailView(r: t)
+                        }
+                        
                     }
-                    
                 }
-            }
-            ForEach(userData.quizStore2) { t in
-                if t.favorite == true {
-                    Button(action:{
-                        self.Sheet.toggle()
-                    }) {
-                        Text(t.title)
-                    }.sheet(isPresented: self.$Sheet) {
-                        FavoriteDetailView(r: t)
+                ForEach(userData.quizStore2) { t in
+                    if t.favorite == true {
+                        Button(action:{
+                            self.Sheet.toggle()
+                        }) {
+                            Text(t.title)
+                        }.sheet(isPresented: self.$Sheet) {
+                            FavoriteDetailView(r: t)
+                        }
                     }
                 }
             }

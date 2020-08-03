@@ -6,7 +6,8 @@
         "OKans": "正解",
         "BADans": "不正解",
         "sentence":"クイズの解説",
-        "favorite": false
+        "favorite": false,
+        "already": false
     },
     {
         "id": 1002,
@@ -15,7 +16,8 @@
         "OKans": "Don't fuck with me",
         "BADans": "Shall we dance?",
         "sentence":"ストレス発散しまん",
-        "favorite": false
+        "favorite": false,
+        "already": false
     },
     {
         "id": 1003,
@@ -24,6 +26,7 @@
         "OKans": "nglegnkgkgb",
         "BADans": "kngln",
         "sentence":"jaj;ljgjg",
-        "favorite": false
+        "favorite": false,
+        "already": false
     }
 ]
