@@ -25,7 +25,9 @@ struct QuizDetailView: View {
         
             VStack {
                 Text(now.title)
+                    .font(.largeTitle)
                 Text(now.explain)
+                    .font(.headline)
                 Spacer()
                 if result {
                     Button(action: {
@@ -36,9 +38,12 @@ struct QuizDetailView: View {
                         self.result.toggle()
                         self.showText.toggle()
                 }) {
-                    Text("result")
-                        .padding(.bottom)
-                        .frame(height: 200.0)
+                    Image(systemName: "circle")
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 155, height: 155)
+                        .clipShape(Circle())
                 }
                 }
                 if showText {
