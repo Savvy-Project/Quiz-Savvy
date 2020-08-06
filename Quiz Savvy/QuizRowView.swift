@@ -10,29 +10,17 @@ import SwiftUI
 
 struct QuizRowView: View {
     @EnvironmentObject var userData: UserData
-    var quiz1Index: Int {
-        userData.quizStore1.firstIndex(where: { $0.id == i.id })!
-    }
+    var nums: Int = 1
     
-    var quiz2Index: Int {
-        userData.quizStore2.firstIndex(where: { $0.id == i.id })!
-    }
     var i: Quiz
     var body: some View {
         HStack {
             Text(i.title)
-            if userData.quizStore1[self.quiz1Index].already {
-                Image(systemName: "star.fill")
-                    .imageScale(.medium)
-                    .foregroundColor(.yellow)
-            }
-            if userData.quizStore2[self.quiz2Index].already {
-                Image(systemName: "star.fill")
-                    .imageScale(.medium)
-                    .foregroundColor(.yellow)
+            
+            if i.already {
+                Text("まん")
             }
         }
-        
     }
 }
 

@@ -20,6 +20,13 @@ struct QuizDetailView: View {
     var now: Quiz
     var i: Int = 0
     var numA: Int = 0
+    var quiz3Index: Int {
+        userData.quizStore1.firstIndex(where: { $0.id == now.id })!
+    }
+    
+    var quiz4Index: Int {
+        userData.quizStore2.firstIndex(where: { $0.id == now.id })!
+    }
     
     var body: some View {
         
@@ -37,6 +44,12 @@ struct QuizDetailView: View {
                         self.list.shuffle()
                         self.result.toggle()
                         self.showText.toggle()
+                        if self.numA == 1 {
+                            self.userData.quizStore1[self.quiz3Index].already = true
+                        } else if self.numA == 2 {
+                            self.userData.quizStore1[self.quiz4Index].already.toggle()
+                        }
+                        
                 }) {
                     Image(systemName: "circle")
                         .renderingMode(.original)

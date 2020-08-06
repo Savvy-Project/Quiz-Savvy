@@ -19,8 +19,10 @@ struct QuizListView: View {
             if num == 1 {
                 List {
                     ForEach(0..<userData.quizStore1.count, id: \.self) { k in
-                        NavigationLink(destination: QuizDetailView(now: self.userData.quizStore1[k], numA: self.num)) {
-                            Text(self.userData.quizStore1[k].title)
+                        NavigationLink(destination: QuizDetailView(now: self.userData.quizStore1[k], numA: self.num)
+                                
+                        ) {
+                            QuizRowView(i: self.userData.quizStore1[k])
                         }
                     }
                 }

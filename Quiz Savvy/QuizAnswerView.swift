@@ -46,7 +46,7 @@ struct QuizAnswerView: View {
                         self.userData.quizStore1[self.quiz1Index].favorite.toggle()
                         
                     }) {
-                        if self.userData.quizStore1[self.quiz1Index].favorite {
+                        if self.userData.quizStore1[self.quiz1Index].favorite  {
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .foregroundColor(Color.yellow)
