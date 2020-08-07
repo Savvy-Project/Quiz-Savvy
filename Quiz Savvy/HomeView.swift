@@ -97,7 +97,7 @@ struct Page1: View {
 }
 struct Page2: View {
     var body: some View {
-        ChooseView(items: situationStore)
+        ChooseView(item: situationStore[0])
     }
 }
 

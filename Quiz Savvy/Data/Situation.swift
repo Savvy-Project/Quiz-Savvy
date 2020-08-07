@@ -14,6 +14,7 @@ struct Situation : Hashable,Codable,Identifiable {
     public var imageName: String
     public var image: Image { Image(imageName) }
     public var quiznum: Int
+    public var seni: Bool
 }
 
 

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct QuizDetailView: View {
+    @EnvironmentObject var timerHolder: TimerHolder
     @EnvironmentObject var userData: UserData
     @State var showingDetail1 = false
     @State var showingDetail2 = false
@@ -17,24 +18,30 @@ struct QuizDetailView: View {
     @State var list: [String] = []
     @State var showText = false
     @State var result = true
+    @State var countup = true
     var now: Quiz
+    
     var i: Int = 0
     var numA: Int = 0
-    var quiz3Index: Int {
+    var quiz1Index: Int {
         userData.quizStore1.firstIndex(where: { $0.id == now.id })!
     }
     
-    var quiz4Index: Int {
+    var quiz2Index: Int {
         userData.quizStore2.firstIndex(where: { $0.id == now.id })!
     }
     
     var body: some View {
         
             VStack {
-                Text(now.title)
+                if result {
+                    Text(now.title)
                     .font(.largeTitle)
-                Text(now.explain)
-                    .font(.headline)
+                } else {
+                    Text(now.explain)
+                        .font(.headline)
+                }
+                
                 Spacer()
                 if result {
                     Button(action: {
@@ -45,9 +52,9 @@ struct QuizDetailView: View {
                         self.result.toggle()
                         self.showText.toggle()
                         if self.numA == 1 {
-                            self.userData.quizStore1[self.quiz3Index].already = true
+                            self.userData.quizStore1[self.quiz1Index].already = true
                         } else if self.numA == 2 {
-                            self.userData.quizStore1[self.quiz4Index].already.toggle()
+                            self.userData.quizStore1[self.quiz2Index].already.toggle()
                         }
                         
                 }) {
@@ -101,7 +108,7 @@ struct QuizDetailView: View {
                         NavigationLink(destination:  QuizAnswerView(ans: self.ans2, quizes: now, numB: numA), isActive: $showingDetail2) {
                             EmptyView()
                         }
-                    }.navigationBarHidden(true)
+                    }
                 }
             }.navigationBarHidden(true)
          .padding(.bottom,88)
