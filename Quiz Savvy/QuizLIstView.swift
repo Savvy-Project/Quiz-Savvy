@@ -35,15 +35,18 @@ struct QuizListView: View {
                     }
                     
                 }
-                
                 .navigationBarTitle("日常")
-                
                 .navigationBarBackButtonHidden(true)
                 
                 
             }
             
             if num == 2 {
+                Button(action: {
+                    self.userData.situation[1].seni = false
+                }) {
+                    Text("Back")
+                }
                 List {
                     ForEach(0..<userData.quizStore2.count, id: \.self) { o in
                         NavigationLink(destination: QuizDetailView(now: self.userData.quizStore2[o], numA: self.num)) {
@@ -52,6 +55,7 @@ struct QuizListView: View {
                     }
                 }
                 .navigationBarTitle("学校")
+                .navigationBarBackButtonHidden(true)
                 
             }
         }

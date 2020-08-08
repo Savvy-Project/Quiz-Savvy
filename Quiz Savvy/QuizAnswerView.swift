@@ -94,6 +94,9 @@ struct QuizAnswerView: View {
                             .frame(width: 120, height: 40)
                             .background(Color.yellow)
                             .cornerRadius(10)
+                        NavigationLink(destination: QuizListView(num: numB), isActive: $Return) {
+                                EmptyView()
+                        }
                     }
                     
                     Button(action: {
@@ -105,7 +108,7 @@ struct QuizAnswerView: View {
                             .frame(width: 120, height: 40)
                             .background(Color.green)
                             .cornerRadius(10)
-                            NavigationLink(destination: QuizListView(num: numB), isActive: $Next) {
+                        NavigationLink(destination: QuizListView(num: numB), isActive: $Next) {
                                 EmptyView()
                         }
                     }
