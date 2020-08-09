@@ -30,6 +30,9 @@
 		CCDFDCC124A870C400A09046 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCC024A870C400A09046 /* FavoriteView.swift */; };
 		CCDFDCC824AA07AF00A09046 /* Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCC724AA07AF00A09046 /* Situation.swift */; };
 		CCDFDCCA24AA080600A09046 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFDCC924AA080600A09046 /* Data.swift */; };
+		CCECD2A824E012CF00AD7D5E /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCECD2A724E012CF00AD7D5E /* Timer.swift */; };
+		CCECD2AA24E012DE00AD7D5E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCECD2A924E012DE00AD7D5E /* AudioPlayer.swift */; };
+		CCECD2AD24E01C2900AD7D5E /* music1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCECD2AC24E01C2900AD7D5E /* music1.mp3 */; };
 		CCF2999324C85B8B003D8E0B /* QuizRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF2999224C85B8B003D8E0B /* QuizRowView.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,9 @@
 		CCDFDCC024A870C400A09046 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		CCDFDCC724AA07AF00A09046 /* Situation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Situation.swift; sourceTree = "<group>"; };
 		CCDFDCC924AA080600A09046 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		CCECD2A724E012CF00AD7D5E /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		CCECD2A924E012DE00AD7D5E /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		CCECD2AC24E01C2900AD7D5E /* music1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music1.mp3; sourceTree = "<group>"; };
 		CCF2999224C85B8B003D8E0B /* QuizRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +187,7 @@
 		CCDFDCC424AA03A700A09046 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CCECD2AB24E01BAF00AD7D5E /* Sounds */,
 				CC47627124AB2AEA008CBFAE /* situation.json */,
 				CC64C02D24AF4D4400724BC2 /* quiz1.json */,
 				CC64C02F24AF4D8500724BC2 /* quiz2.json */,
@@ -188,8 +195,18 @@
 				CCDFDCC924AA080600A09046 /* Data.swift */,
 				CC64C03124AF4E9B00724BC2 /* Quiz.swift */,
 				CC69ABEC24D132EA0019FB82 /* UserData.swift */,
+				CCECD2A724E012CF00AD7D5E /* Timer.swift */,
+				CCECD2A924E012DE00AD7D5E /* AudioPlayer.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		CCECD2AB24E01BAF00AD7D5E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CCECD2AC24E01C2900AD7D5E /* music1.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +317,7 @@
 				CCDFDC9024A8568900A09046 /* Preview Assets.xcassets in Resources */,
 				CC64C02E24AF4D4400724BC2 /* quiz1.json in Resources */,
 				CC47627224AB2AEA008CBFAE /* situation.json in Resources */,
+				CCECD2AD24E01C2900AD7D5E /* music1.mp3 in Resources */,
 				CCDFDC8D24A8568900A09046 /* Assets.xcassets in Resources */,
 				CC64C03024AF4D8500724BC2 /* quiz2.json in Resources */,
 			);
@@ -337,11 +355,13 @@
 				CCF2999324C85B8B003D8E0B /* QuizRowView.swift in Sources */,
 				CCDFDCBD24A8580000A09046 /* ChooseView.swift in Sources */,
 				CCDFDCB924A8579500A09046 /* HomeView.swift in Sources */,
+				CCECD2AA24E012DE00AD7D5E /* AudioPlayer.swift in Sources */,
 				CC64C03424B1F70D00724BC2 /* QuizAnswerView.swift in Sources */,
 				CC3A8C3F24AF019500E05E70 /* QuizDetailView.swift in Sources */,
 				CCDFDCBB24A857A800A09046 /* TopView.swift in Sources */,
 				CCDFDCB724A8576600A09046 /* StartView.swift in Sources */,
 				CCDFDCC824AA07AF00A09046 /* Situation.swift in Sources */,
+				CCECD2A824E012CF00AD7D5E /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

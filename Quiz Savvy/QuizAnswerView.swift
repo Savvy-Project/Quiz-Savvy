@@ -16,6 +16,8 @@ struct QuizAnswerView: View {
     @State var Star: Bool = false
     @State var quizes: Quiz
     @State var Next = false
+    @State var sound = false
+    var test = AudioPlayer()
 
     var quiz1Index: Int {
         userData.quizStore1.firstIndex(where: { $0.id == quizes.id })!
@@ -41,12 +43,30 @@ struct QuizAnswerView: View {
                 Text(quizes.sentence)
                 .frame(width: 400, height: 400)
                 
+                Button(action: {
+                        self.sound.toggle()
+                        if self.sound {
+                            self.test.userName = "music1"
+                            self.test.playAudio()
+                        } else {
+                            self.test.stopAudio()
+
+                        }
+                        
+                        
+                    }) {
+                        Text("play audio")
+                        .onDisappear {
+                            self.test.stopAudio()
+                        }
+                }
+                
                 if numB == 1 {
                     Button(action: {
                         self.userData.quizStore1[self.quiz1Index].favorite.toggle()
                         
                     }) {
-                        if self.userData.quizStore1[self.quiz1Index].favorite {
+                        if self.userData.quizStore1[self.quiz1Index].favorite  {
                             Image(systemName: "star.fill")
                                 .resizable()
                                 .foregroundColor(Color.yellow)
@@ -94,6 +114,9 @@ struct QuizAnswerView: View {
                             .frame(width: 120, height: 40)
                             .background(Color.yellow)
                             .cornerRadius(10)
+                        NavigationLink(destination: QuizListView(num: numB), isActive: $Return) {
+                                EmptyView()
+                        }
                     }
                     
                     Button(action: {
@@ -105,7 +128,7 @@ struct QuizAnswerView: View {
                             .frame(width: 120, height: 40)
                             .background(Color.green)
                             .cornerRadius(10)
-                            NavigationLink(destination: QuizListView(num: numB), isActive: $Next) {
+                        NavigationLink(destination: QuizListView(num: numB), isActive: $Next) {
                                 EmptyView()
                         }
                     }

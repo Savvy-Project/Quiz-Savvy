@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct QuizDetailView: View {
+    @EnvironmentObject var timerHolder: TimerHolder
     @EnvironmentObject var userData: UserData
     @State var showingDetail1 = false
     @State var showingDetail2 = false
@@ -17,24 +18,28 @@ struct QuizDetailView: View {
     @State var list: [String] = []
     @State var showText = false
     @State var result = true
-    @State var titleon = true
-    @State var explainon = false
-    
+    @State var countup = true
     var now: Quiz
+    
     var i: Int = 0
     var numA: Int = 0
+    var quiz1Index: Int {
+        userData.quizStore1.firstIndex(where: { $0.id == now.id })!
+    }
+    
+    var quiz2Index: Int {
+        userData.quizStore2.firstIndex(where: { $0.id == now.id })!
+    }
     
     var body: some View {
         
             VStack {
-                if titleon{
+                if result {
                     Text(now.title)
                     .font(.largeTitle)
-                }
-                
-                if explainon{
+                } else {
                     Text(now.explain)
-                    .font(.headline)
+                        .font(.headline)
                 }
                 
                 Spacer()
@@ -46,8 +51,12 @@ struct QuizDetailView: View {
                         self.list.shuffle()
                         self.result.toggle()
                         self.showText.toggle()
-                        self.titleon.toggle()
-                        self.explainon.toggle()
+                        if self.numA == 1 {
+                            self.userData.quizStore1[self.quiz1Index].already = true
+                        } else if self.numA == 2 {
+                            self.userData.quizStore1[self.quiz2Index].already.toggle()
+                        }
+                        
                 }) {
                     Image(systemName: "circle")
                         .renderingMode(.original)
@@ -99,7 +108,7 @@ struct QuizDetailView: View {
                         NavigationLink(destination:  QuizAnswerView(ans: self.ans2, quizes: now, numB: numA), isActive: $showingDetail2) {
                             EmptyView()
                         }
-                    }.navigationBarHidden(true)
+                    }
                 }
             }.navigationBarHidden(true)
          .padding(.bottom,88)

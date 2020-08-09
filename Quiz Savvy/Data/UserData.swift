@@ -10,6 +10,10 @@ import SwiftUI
 import Combine
 
 final class UserData: ObservableObject {
+    @Published var situation = situationStore
     @Published var quizStore1 = quizStore.quiz1
     @Published var quizStore2 = quizStore.quiz2
 }
+
+
+

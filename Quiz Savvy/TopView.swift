@@ -11,7 +11,7 @@ import SwiftUI
 struct TopView: View {
     
     var body: some View {
-        Text("オスマン帝国の皇帝")
+        Text("オスマン帝国")
     } 
 }
 

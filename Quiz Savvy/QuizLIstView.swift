@@ -9,7 +9,10 @@
 import SwiftUI
 
 struct QuizListView: View {
+    @Environment(\.presentationMode) var presentation
     @EnvironmentObject var userData: UserData
+   
+    
     
 
     @State var num: Int = 2
@@ -17,17 +20,33 @@ struct QuizListView: View {
     var body: some View {
         VStack {
             if num == 1 {
+                Button(action: {
+                    self.userData.situation[0].seni = false
+                }) {
+                    Text("Back")
+                }
                 List {
                     ForEach(0..<userData.quizStore1.count, id: \.self) { k in
-                        NavigationLink(destination: QuizDetailView(now: self.userData.quizStore1[k], numA: self.num)) {
-                            Text(self.userData.quizStore1[k].title)
+                        NavigationLink(destination: QuizDetailView(now: self.userData.quizStore1[k], numA: self.num)
+                                
+                        ) {
+                            QuizRowView(i: self.userData.quizStore1[k])
                         }
                     }
+                    
                 }
                 .navigationBarTitle("日常")
+                .navigationBarBackButtonHidden(true)
+                
                 
             }
+            
             if num == 2 {
+                Button(action: {
+                    self.userData.situation[1].seni = false
+                }) {
+                    Text("Back")
+                }
                 List {
                     ForEach(0..<userData.quizStore2.count, id: \.self) { o in
                         NavigationLink(destination: QuizDetailView(now: self.userData.quizStore2[o], numA: self.num)) {
@@ -36,6 +55,7 @@ struct QuizListView: View {
                     }
                 }
                 .navigationBarTitle("学校")
+                .navigationBarBackButtonHidden(true)
                 
             }
         }
