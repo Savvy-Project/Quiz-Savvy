@@ -18,7 +18,7 @@ struct QuizDetailView: View {
     @State var list: [String] = []
     @State var showText = false
     @State var result = true
-    @State var countup = true
+    
     var now: Quiz
     
     var i: Int = 0
