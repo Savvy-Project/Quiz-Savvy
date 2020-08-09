@@ -21,6 +21,10 @@ struct StartView: View {
                 NavigationLink(destination: HomeView()){
                     Text("Start")
                         .font(.largeTitle)
+                        .bold()
+                        .tracking(3)
+                        .foregroundColor(Color.black)
+                        
                 }
             }
         }
