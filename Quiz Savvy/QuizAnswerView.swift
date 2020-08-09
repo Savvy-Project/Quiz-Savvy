@@ -16,6 +16,8 @@ struct QuizAnswerView: View {
     @State var Star: Bool = false
     @State var quizes: Quiz
     @State var Next = false
+    @State var sound = false
+    var test = AudioPlayer()
 
     var quiz1Index: Int {
         userData.quizStore1.firstIndex(where: { $0.id == quizes.id })!
@@ -40,6 +42,24 @@ struct QuizAnswerView: View {
                 
                 Text(quizes.sentence)
                 .frame(width: 400, height: 400)
+                
+                Button(action: {
+                        self.sound.toggle()
+                        if self.sound {
+                            self.test.userName = "music1"
+                            self.test.playAudio()
+                        } else {
+                            self.test.stopAudio()
+
+                        }
+                        
+                        
+                    }) {
+                        Text("play audio")
+                        .onDisappear {
+                            self.test.stopAudio()
+                        }
+                }
                 
                 if numB == 1 {
                     Button(action: {
