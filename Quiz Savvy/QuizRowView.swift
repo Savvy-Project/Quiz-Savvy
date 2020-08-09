@@ -15,12 +15,33 @@ struct QuizRowView: View {
     var i: Quiz
     var body: some View {
         HStack {
+            
             Text(i.title)
+                .foregroundColor(Color.white)
+                .padding(.init(10))
+                
+            Spacer()
             
             if i.already {
-                Text("まん")
+                Image(systemName: "checkmark")
+                    .frame(width: 30, height: 30)
+                    .border(Color.black)
+                    .foregroundColor(Color.green)
+                    .padding()
             }
-        }
+            else{
+                Image(systemName: "checkmark")
+                .resizable()
+                .frame(width: 30, height: 30)
+                    .border(Color.black,width: 3)
+                    .foregroundColor(Color.gray)
+                .padding()
+            }
+            
+
+        }.frame(minWidth: 0,  maxWidth: .infinity, minHeight: 80,maxHeight: 80 ,alignment: .leading)
+            .background(Color.gray)
+        .cornerRadius(10)
     }
 }
 
@@ -28,7 +49,6 @@ struct QuizRowView_Previews: PreviewProvider {
     static var previews: some View {
         let userData = UserData()
         return QuizRowView(i: userData.quizStore1[0])
-                    .previewLayout(.fixed(width: 400, height: 80))
                     .environmentObject(userData)
     }
 }

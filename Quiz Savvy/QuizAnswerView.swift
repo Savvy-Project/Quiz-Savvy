@@ -43,63 +43,70 @@ struct QuizAnswerView: View {
                 Text(quizes.sentence)
                 .frame(width: 400, height: 400)
                 
-                Button(action: {
-                        self.sound.toggle()
-                        if self.sound {
-                            self.test.userName = "music1"
-                            self.test.playAudio()
-                        } else {
-                            self.test.stopAudio()
+                HStack(spacing:100){
+                    Button(action: {
+                            self.sound.toggle()
+                            if self.sound {
+                                self.test.userName = "music1"
+                                self.test.playAudio()
+                            } else {
+                                self.test.stopAudio()
 
-                        }
-                        
-                        
-                    }) {
-                        Text("play audio")
-                        .onDisappear {
-                            self.test.stopAudio()
-                        }
-                }
-                
-                if numB == 1 {
-                    Button(action: {
-                        self.userData.quizStore1[self.quiz1Index].favorite.toggle()
-                        
-                    }) {
-                        if self.userData.quizStore1[self.quiz1Index].favorite  {
-                            Image(systemName: "star.fill")
-                                .resizable()
-                                .foregroundColor(Color.yellow)
-                                .frame(width: 30, height: 30)
+                            }
                             
-                        }else {
-                            Image(systemName: "star")
+                            
+                        }) {
+                            Image(systemName: "speaker.fill")
                                 .resizable()
-                                .foregroundColor(Color.black)
-                                .frame(width: 30, height: 30)
-                        }
+                                .foregroundColor(Color.red)
+                                .frame(width: 40, height: 40)
+                            .onDisappear {
+                                self.test.stopAudio()
+                            }
                     }
                     
-                }else if numB == 2 {
-                    Button(action: {
-                        self.userData.quizStore2[self.quiz2Index].favorite.toggle()
-                        
-                    }) {
-                        if self.userData.quizStore2[self.quiz2Index].favorite {
-                            Image(systemName: "star.fill")
-                                .resizable()
-                                .foregroundColor(Color.yellow)
-                                .frame(width: 30, height: 30)
-                            
-                        }else {
-                            Image(systemName: "star")
-                                .resizable()
-                                .foregroundColor(Color.black)
-                                .frame(width: 30, height: 30)
-                        }
-                    }
                     
-                }
+                    
+                    if numB == 1 {
+                        Button(action: {
+                            self.userData.quizStore1[self.quiz1Index].favorite.toggle()
+                            
+                        }) {
+                            if self.userData.quizStore1[self.quiz1Index].favorite  {
+                                Image(systemName: "star.fill")
+                                    .resizable()
+                                    .foregroundColor(Color.yellow)
+                                    .frame(width: 40, height: 40)
+                                
+                            }else {
+                                Image(systemName: "star")
+                                    .resizable()
+                                    .foregroundColor(Color.black)
+                                    .frame(width: 40, height: 40)
+                            }
+                        }
+                        
+                    }else if numB == 2 {
+                        Button(action: {
+                            self.userData.quizStore2[self.quiz2Index].favorite.toggle()
+                            
+                        }) {
+                            if self.userData.quizStore2[self.quiz2Index].favorite {
+                                Image(systemName: "star.fill")
+                                    .resizable()
+                                    .foregroundColor(Color.yellow)
+                                    .frame(width: 30, height: 30)
+                                
+                            }else {
+                                Image(systemName: "star")
+                                    .resizable()
+                                    .foregroundColor(Color.black)
+                                    .frame(width: 30, height: 30)
+                            }
+                        }
+                        
+                    }
+                }.padding(30)
                
                 
                 
