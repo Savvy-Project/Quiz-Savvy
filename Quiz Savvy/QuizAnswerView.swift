@@ -32,82 +32,92 @@ struct QuizAnswerView: View {
     var body: some View {
       
             VStack {
+                VStack(spacing: 50){
+                    AnswerFragView(ans: ans)
+                    
+                    HStack{
+                        Text(quizes.OKans)
+                            .lineLimit(nil)
+                            .font(.title)
+                                                    
+                        if numB == 1 {
+                                        Button(action: {
+                                            self.userData.quizStore1[self.quiz1Index].favorite.toggle()
+                                            
+                                        }) {
+                                            if self.userData.quizStore1[self.quiz1Index].favorite  {
+                                                Image(systemName: "star.fill")
+                                                    .resizable()
+                                                    .foregroundColor(Color.yellow)
+                                                    .frame(width: 40, height: 40)
+                                                
+                                            }else {
+                                                Image(systemName: "star")
+                                                    .resizable()
+                                                    .foregroundColor(Color.black)
+                                                    .frame(width: 40, height: 40)
+                                            }
+                                        }
+                                        
+                                    }else if numB == 2 {
+                                        Button(action: {
+                                            self.userData.quizStore2[self.quiz2Index].favorite.toggle()
+                                            
+                                        }) {
+                                            if self.userData.quizStore2[self.quiz2Index].favorite {
+                                                Image(systemName: "star.fill")
+                                                    .resizable()
+                                                    .foregroundColor(Color.yellow)
+                                                    .frame(width: 30, height: 30)
+                                                
+                                            }else {
+                                                Image(systemName: "star")
+                                                    .resizable()
+                                                    .foregroundColor(Color.black)
+                                                    .frame(width: 30, height: 30)
+                                            }
+                                        }
+                                    }
+                        }
+                }.frame(width: 280, height: 200)
                 
-                AnswerFragView(ans: ans)
-                    .padding()
-                HStack {
-                    Text("今回のフレーズ:")
-                    Text(quizes.OKans)
-                }.padding()
+                Spacer()
                 
-                Text(quizes.sentence)
-                .frame(width: 400, height: 400)
-                
-                HStack(spacing:100){
-                    Button(action: {
-                            self.sound.toggle()
-                            if self.sound {
-                                self.test.userName = "music1"
-                                self.test.playAudio()
-                            } else {
-                                self.test.stopAudio()
+                VStack(alignment: .leading){
+                    HStack{
+                        Text("解説")
+                            .font(.headline)
+                        
+                        Button(action: {
+                                self.sound.toggle()
+                                if self.sound {
+                                    self.test.userName = "music1"
+                                    self.test.playAudio()
+                                } else {
+                                    self.test.stopAudio()
 
-                            }
-                            
-                            
-                        }) {
-                            Image(systemName: "speaker.fill")
-                                .resizable()
-                                .foregroundColor(Color.red)
-                                .frame(width: 40, height: 40)
-                            .onDisappear {
-                                self.test.stopAudio()
+                                }
+                                
+                                
+                            }) {
+                                Image(systemName: "speaker.fill")
+                                    .resizable()
+                                    .foregroundColor(Color.red)
+                                    .frame(width: 20, height: 20)
+                                .onDisappear {
+                                    self.test.stopAudio()
+                                }
                             }
                     }
-                    
-                    
-                    
-                    if numB == 1 {
-                        Button(action: {
-                            self.userData.quizStore1[self.quiz1Index].favorite.toggle()
-                            
-                        }) {
-                            if self.userData.quizStore1[self.quiz1Index].favorite  {
-                                Image(systemName: "star.fill")
-                                    .resizable()
-                                    .foregroundColor(Color.yellow)
-                                    .frame(width: 40, height: 40)
-                                
-                            }else {
-                                Image(systemName: "star")
-                                    .resizable()
-                                    .foregroundColor(Color.black)
-                                    .frame(width: 40, height: 40)
-                            }
-                        }
                         
-                    }else if numB == 2 {
-                        Button(action: {
-                            self.userData.quizStore2[self.quiz2Index].favorite.toggle()
-                            
-                        }) {
-                            if self.userData.quizStore2[self.quiz2Index].favorite {
-                                Image(systemName: "star.fill")
-                                    .resizable()
-                                    .foregroundColor(Color.yellow)
-                                    .frame(width: 30, height: 30)
-                                
-                            }else {
-                                Image(systemName: "star")
-                                    .resizable()
-                                    .foregroundColor(Color.black)
-                                    .frame(width: 30, height: 30)
-                            }
-                        }
-                        
-                    }
-                }.padding(30)
-               
+                   Text(quizes.sentence)
+                    .lineLimit(nil)
+                    
+                }.frame(width: 300, height:350 , alignment: .topLeading)
+                    .padding(.top)
+                    
+                
+                Spacer()
                 
                 
                 
@@ -142,6 +152,7 @@ struct QuizAnswerView: View {
                 }
         }.navigationBarHidden(true)
          .padding(.bottom,88)
+        .padding(.top,80)
     }
                    
 }

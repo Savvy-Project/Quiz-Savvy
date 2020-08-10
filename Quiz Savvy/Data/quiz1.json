@@ -1,21 +1,21 @@
-[ 
+[
     {
         "id": 1001,
-        "title":"クイズのタイトル",
-        "explain": "クイズの問題文",
-        "OKans": "正解",
-        "BADans": "不正解",
-        "sentence":"クイズの解説",
+        "title":"侮辱された！",
+        "explain": "侮辱されたとき",
+        "OKans": "Don't fuck with me.otinpootinpo",
+        "BADans": "Shall we dance?",
+        "sentence":"ストレス発散しまん。青木はオスマン帝国の第3皇帝まん。",
         "favorite": false,
         "already": false
     },
     {
         "id": 1002,
-        "title":"タイトル",
-        "explain": "侮辱されたとき",
-        "OKans": "Don't fuck with me",
-        "BADans": "Shall we dance?",
-        "sentence":"ストレス発散しまん",
+        "title":"クイズのタイトル",
+        "explain": "クイズの問題文",
+        "OKans": "正解",
+        "BADans": "不正解",
+        "sentence":"クイズの解説",
         "favorite": false,
         "already": false
     },

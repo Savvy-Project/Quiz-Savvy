@@ -80,8 +80,11 @@ struct QuizDetailView: View {
                                 .fill(Color.yellow)
                                 .frame(width: 200, height: 100)
                             Text(list[0])
-                            .foregroundColor(Color.white)
-                            .font(.headline)
+                                .foregroundColor(Color.white)
+                                .font(.headline)
+                                .lineLimit(nil)
+                                .frame(width: 200, height: 100)
+
                         }
                         NavigationLink(destination: QuizAnswerView(ans: self.ans1, quizes: now, numB: numA), isActive: $showingDetail1) {
                             EmptyView()
@@ -102,8 +105,12 @@ struct QuizDetailView: View {
                                 .fill(Color.red)
                                 .frame(width: 200, height: 100)
                             Text(list[1])
-                            .foregroundColor(Color.white)
-                            .font(.headline)
+                                .foregroundColor(Color.white)
+                                .font(.headline)
+                                .lineLimit(nil)
+                                .frame(width: 200, height: 100)
+
+
                         }
                         NavigationLink(destination:  QuizAnswerView(ans: self.ans2, quizes: now, numB: numA), isActive: $showingDetail2) {
                             EmptyView()

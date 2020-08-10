@@ -17,16 +17,18 @@ struct FavoriteDetailView: View {
         NavigationView{
             VStack {
                 Text(r.OKans)
-                Text(r.sentence)
-                    .navigationBarItems(trailing: Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("close")
-                    })
+                    .font(.title)
+                    .frame(width: 350, height: 200)
                 
+                Text(r.sentence)
+                    .frame(width: 350, height: 200)
             }
         }
-        
+           .navigationBarItems(trailing: Button(action: {
+               self.presentationMode.wrappedValue.dismiss()
+           }) {
+               Text("close")
+           })
     }
 }
 
