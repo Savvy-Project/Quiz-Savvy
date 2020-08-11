@@ -631,7 +631,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8CM5H8B6HZ;
+				DEVELOPMENT_TEAM = TLXQHFWVLH;
 				INFOPLIST_FILE = "Quiz SavvyUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

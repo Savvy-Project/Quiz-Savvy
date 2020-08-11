@@ -31,6 +31,10 @@ struct FavoriteView: View {
                         
                     }
                 }
+                .onDelete { offsets in
+                    self.userData.quizStore1.remove(atOffsets: offsets)
+                }
+                
                 ForEach(userData.quizStore2) { t in
                     if t.favorite == true {
                         Button(action:{
@@ -41,6 +45,9 @@ struct FavoriteView: View {
                             FavoriteDetailView(r: t)
                         }
                     }
+                }
+                .onDelete { offsets in
+                    self.userData.quizStore2.remove(atOffsets: offsets)
                 }
             }
         }
