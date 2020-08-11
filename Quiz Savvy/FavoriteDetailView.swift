@@ -23,12 +23,13 @@ struct FavoriteDetailView: View {
                 Text(r.sentence)
                     .frame(width: 350, height: 200)
             }
+            .navigationBarItems(trailing: Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("close")
+            })
         }
-           .navigationBarItems(trailing: Button(action: {
-               self.presentationMode.wrappedValue.dismiss()
-           }) {
-               Text("close")
-           })
+        
     }
 }
 

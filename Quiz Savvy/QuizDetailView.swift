@@ -37,7 +37,9 @@ struct QuizDetailView: View {
                 if result {
                     Text(now.title)
                     .font(.largeTitle)
-                } else {
+                }
+
+                else {
                     Text(now.explain)
                         .font(.headline)
                 }
@@ -54,7 +56,7 @@ struct QuizDetailView: View {
                         if self.numA == 1 {
                             self.userData.quizStore1[self.quiz1Index].already = true
                         } else if self.numA == 2 {
-                            self.userData.quizStore1[self.quiz2Index].already.toggle()
+                            self.userData.quizStore2[self.quiz2Index].already.toggle()
                         }
                         
                 }) {
