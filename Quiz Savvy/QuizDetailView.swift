@@ -36,12 +36,14 @@ struct QuizDetailView: View {
             VStack {
                 if result {
                     Text(now.title)
-                    .font(.largeTitle)
+                        .font(.largeTitle)
+                        .bold()
                 }
 
                 else {
                     Text(now.explain)
-                        .font(.headline)
+                        .font(.title)
+                        .bold()
                 }
                 
                 Spacer()
